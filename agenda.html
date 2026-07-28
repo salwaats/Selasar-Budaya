@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Budaya</title>
+    <!-- Menggunakan Tailwind CSS untuk styling -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('asset/img/wayang2.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans antialiased">
+
+    <!-- NAVBAR -->
+    <nav class="bg-black text-white px-6 py-4 flex justify-between items-center md:px-16">
+        <div class="text-xl font-bold tracking-wider"></div>
+       <div class="hidden md:flex space-x-6 text-sm font-medium items-center">
+        <a href="index.html" class="text-white hover:text-gray-300 transition decoration-transparent no-underline" style="text-decoration: none;">Homepage</a>
+        <a href="agenda.html" class="text-white hover:text-gray-300 transition decoration-transparent no-underline" style="text-decoration: none;">Agenda</a>
+        <a href="komun.html" class="text-white hover:text-gray-300 transition decoration-transparent no-underline" style="text-decoration: none;">Komunitas</a>
+        <a href="#" class="text-white hover:text-gray-300 transition decoration-transparent no-underline" style="text-decoration: none;">Artikel</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-bg relative text-white pt-20 pb-32 px-6 md:px-16 min-h-[400px] flex flex-col justify-center">
+        <div class="max-w-3xl">
+            <h1 class="text-orange-400 text-4xl md:text-5xl font-bold mb-4">
+                Agenda Budaya
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl leading-relaxed max-w-xl">
+                Temukan berbagai acara dan kegiatan budaya di seluruh Indonesia. 
+                Lestarikan budaya dengan berpartisipasi dan hadir langsung.
+            </p>
+        </div>
+    </header>
+
+    <!-- SEARCH BAR WIDGET (Daftar Pilihan Sudah Terisi) -->
+    <main class="max-w-5xl mx-auto px-4 -mt-14 relative z-10">
+        <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
+            <form class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+                
+                <!-- 1. PILIH TANGGAL (Menggunakan Fitur Kalender Aktif) -->
+                <div class="relative border border-gray-300 rounded-lg p-3 flex items-center bg-white focus-within:border-orange-400">
+                    <i class="fa-regular fa-calendar text-gray-500 mr-3"></i>
+                    <input type="date" class="w-full text-gray-700 outline-none text-sm bg-transparent cursor-pointer" required />
+                </div>
+
+                <!-- 2. PILIH KATEGORI (Opsi Sudah Terisi) -->
+                <div class="relative border border-gray-300 rounded-lg p-3 flex items-center bg-white focus-within:border-orange-400">
+                    <i class="fa-solid fa-list text-gray-500 mr-3"></i>
+                    <select class="w-full text-gray-700 outline-none text-sm bg-transparent appearance-none cursor-pointer" required>
+                        <option value="" disabled selected>Pilih Kategori</option>
+                        <option>Seni Pertunjukan</option>
+                        <option>Festival Budaya</option>
+                        <option>Makanan Khas</option>
+                        <option>Edukasi & Workshop</option>
+                        <option>Kerajinan Budaya</option>
+                        <option>Warisan Budaya</option>
+                    </select>
+                    <div class="absolute right-3 pointer-events-none text-gray-400 text-xs">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <!-- 3. PILIH LOKASI (Opsi Wilayah Indonesia Sudah Terisi) -->
+                <div class="relative border border-gray-300 rounded-lg p-3 flex items-center bg-white focus-within:border-orange-400">
+                    <i class="fa-solid fa-location-dot text-gray-500 mr-3"></i>
+                    <select class="w-full text-gray-700 outline-none text-sm bg-transparent appearance-none cursor-pointer" required>
+                        <option value="" disabled selected>Pilih Lokasi</option>
+                        <option value="jakarta">DKI Jakarta</option>
+                        <option value="yogyakarta">DI Yogyakarta</option>
+                        <option value="bali">Bali</option>
+                        <option value="jawa-tengah">Jawa Tengah</option>
+                        <option value="jawa-timur">Jawa Timur</option>
+                        <option value="jawa-barat">Jawa Barat</option>
+                        <option value="sumatera">Sumatera</option>
+                        <option value="sulawesi">Sulawesi</option>
+                        <option value="kalimantan">Kalimantan</option>
+                        <option value="papua">Papua</option>
+                    </select>
+                    <div class="absolute right-3 pointer-events-none text-gray-400 text-xs">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <!-- TOMBOL CARI AGENDA -->
+                <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 px-6 rounded-lg transition duration-200 text-center cursor-pointer shadow-md">
+                    Cari Agenda
+                </button>
+                
+            </form>
+        </div>
+    </main>
+
+	<!-- SECTION AGENDA MENDATANG -->
+<section class="max-w-5xl mx-auto px-4 py-16">
+    <!-- Judul Section -->
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-500 mb-12 tracking-wide">
+        Agenda Mendatang!
+    </h2>
+
+    <!-- Grid Container Kartu -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 justify-center items-stretch">
+        
+        <!-- KARTU 1: Pagelaran Wayang Kulit -->
+         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition duration-300">
+            <!-- Area Gambar dengan Badge Tanggal -->
+            <div class="relative h-64 w-full">
+                <img src="asset/img/wayang3.jpg" alt="Danau Sentani" class="w-full h-full object-cover">
+                <!-- Badge Tanggal -->
+                <div class="absolute -bottom-5 left-6 bg-white py-2 px-4 rounded-md shadow-md text-center border border-gray-100 z-10">
+                    <span class="block text-sm font-bold text-amber-600 uppercase tracking-wider leading-none">20</span>
+                    <span class="block text-[10px] font-semibold text-gray-500 uppercase mt-1 leading-none">March</span>
+                </div>
+            </div>
+
+            <!-- Konten Kartu -->
+            <div class="p-6 pt-10 flex-grow flex flex-col justify-between">
+                <div>
+                    
+                    <!-- Label Kategori -->
+                    <span class="text-[10px] font-bold text-amber-500 tracking-widest uppercase block mb-2">Seni Pertunjukan</span>
+                    <!-- Judul Acara -->
+                     
+                    <h3 class="text-xl font-bold text-amber-900 leading-snug mb-3">
+                        Pagelaran Wayang Kulit "Mahabarata Nusantara"
+                    </h3>
+                    <!-- Deskripsi Singkat -->
+                    <p class="text-xs text-gray-600 leading-relaxed mb-6">
+                        Pagelaran Wayang Kulit "Mahabarata Nusantara" adalah sebuah acara seni pertunjukan yang mengangkat epos klasik Mahabarata dengan iringan musik gamelan. Pertunjukan ini memadukan teknik pedalangan tradisional dengan narasi filosofis mengenai nilai-nilai kebajikan, yang berfungsi sebagai sarana edukasi seni dan moral bagi masyarakat luas.
+                    </p>
+                </div>
+
+                <div>
+                    <!-- Lokasi Acara -->
+                    <div class="flex items-start text-xs text-gray-400 mb-5">
+                        <i class="fa-solid fa-location-dot mt-0.5 mr-2 flex-shrink-0 text-gray-500"></i>
+                        <span>Pendopo Ageng Keraton Kasunanan Surakarta Hadiningrat, Jl. Sidikoro, Baluwarti, Kec. Pasar Kliwon, Kota Surakarta, Jawa Tengah 57144</span>
+                    </div>
+                    <!-- Link Lihat Detail -->
+                    <a href="isiagenda.html" class="text-sm font-bold text-amber-500 hover:text-amber-600 transition flex items-center inline-block no-underline" style="text-decoration: none;">
+                        Lihat Detail <span class="ml-1">></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- KARTU 2: Festival Danau Sentani -->
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition duration-300">
+            <!-- Area Gambar dengan Badge Tanggal -->
+            <div class="relative h-64 w-full">
+                <img src="asset/img/Sentani.jpg" alt="Danau Sentani" class="w-full h-full object-cover">
+                <!-- Badge Tanggal -->
+                <div class="absolute -bottom-5 left-6 bg-white py-2 px-4 rounded-md shadow-md text-center border border-gray-100 z-10">
+                    <span class="block text-sm font-bold text-amber-600 uppercase tracking-wider leading-none">20</span>
+                    <span class="block text-[10px] font-semibold text-gray-500 uppercase mt-1 leading-none">March</span>
+                </div>
+            </div>
+
+            <!-- Konten Kartu -->
+            <div class="p-6 pt-10 flex-grow flex flex-col justify-between">
+                <div>
+                    <!-- Label Kategori -->
+                    <span class="text-[10px] font-bold text-amber-500 tracking-widest uppercase block mb-2">Festival Budaya</span>
+                    <!-- Judul Acara -->
+                    <h3 class="text-xl font-bold text-amber-900 leading-snug mb-3">
+                        Festival Danau Sentani : Perayaan Warisan Budaya dan Keindahan Alam Papua
+                    </h3>
+                    <!-- Deskripsi Singkat -->
+                    <p class="text-xs text-gray-600 leading-relaxed mb-6">
+                        Festival budaya tahunan yang menampilkan tarian tradisional di atas perahu, musik khas Papua, pameran ukiran kayu, lukisan kulit kayu, serta bazar kuliner lokal. Festival ini menjadi ajang pelestarian budaya sekaligus promosi pariwisata Danau Sentani.
+                    </p>
+                </div>
+
+                <div>
+                    <!-- Lokasi Acara -->
+                    <div class="flex items-start text-xs text-gray-400 mb-5">
+                        <i class="fa-solid fa-location-dot mt-0.5 mr-2 flex-shrink-0 text-gray-500"></i>
+                        <span>Kampung Asei Besar, Distrik Sentani Timur, Kabupaten Jayapura, Papua 99352 (Kawasan Dermaga Wisata Danau Sentani)</span>
+                    </div>
+                    <!-- Link Lihat Detail -->
+                    <a href="#" class="text-sm font-bold text-amber-500 hover:text-amber-600 transition flex items-center inline-block no-underline" style="text-decoration: none;">
+                        Lihat Detail <span class="ml-1">></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 1. TOMBOL JELAJAHI SEMUA AGENDA -->
+    <div class="flex justify-center my-12">
+        <a href="#" class="border border-amber-500 text-black font-medium py-3 px-8 rounded-lg hover:bg-amber-500 hover:text-white transition duration-300 no-underline" style="text-decoration: none;">
+            Jelajahi semua Agenda Budaya!
+        </a>
+    </div>
+
+    <!-- 2. BANNER PENDAFTARAN (CTA) -->
+    <section class="max-w-5xl mx-auto px-4 my-16">
+        <div class="bg-amber-500 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row justify-between items-center gap-6 shadow-md">
+            <div class="max-w-xl text-black">
+                <h3 class="text-2xl md:text-3xl font-extrabold mb-4 leading-snug">
+                    Ayo Rayakan Keindahan<br class="hidden md:inline">Budaya Indonesia Bersama!
+                </h3>
+                <p class="text-sm text-black/80 leading-relaxed">
+                    Jelajahi berbagai festival budaya yang menghadirkan pertunjukan seni, kuliner tradisional, workshop, dan pameran budaya dari berbagai daerah di Indonesia. Hadiri acara favoritmu dan jadilah bagian dari upaya melestarikan warisan budaya Nusantara.
+                </p>
+            </div>
+            <div class="flex-shrink-0 w-full md:w-auto">
+                <a href="#" class="bg-gray-100 hover:bg-white text-black font-semibold py-3.5 px-8 rounded-lg shadow-md transition duration-300 no-underline block text-center" style="text-decoration: none;">
+                    Daftarkan Dirimu!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SECTION KATEGORI AGENDA -->
+   <section style="max-width: 1024px; margin: 4rem auto; padding: 0 1rem; font-family: sans-serif;">
+        <h2 style="font-size: 2rem; font-weight: bold; text-align: center; color: #fba92c; margin-bottom: 3rem; letter-spacing: 0.05em;">
+            Kategori Agenda
+        </h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-top: 10px solid #fba92c; display: flex; flex-direction: column; min-height: 160px;">
+                <h4 style="font-size: 1.2rem; font-weight: bold; color: #fba92c; margin: 0 0 0.75rem 0; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Seni Pertunjukan
+                </h4>
+                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin: 0;">
+                    Menampilkan berbagai pertunjukan budaya seperti tari tradisional, musik daerah, teater, wayang, dan seni pertunjukan lainnya.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-top: 10px solid #fba92c; display: flex; flex-direction: column; min-height: 160px;">
+                <h4 style="font-size: 1.2rem; font-weight: bold; color: #fba92c; margin: 0 0 0.75rem 0; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Festival Budaya
+                </h4>
+                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin: 0;">
+                    Berisi festival budaya yang menggabungkan berbagai kegiatan seperti pameran, pertunjukan seni, bazar, dan atraksi budaya.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-top: 10px solid #fba92c; display: flex; flex-direction: column; min-height: 160px;">
+                <h4 style="font-size: 1.2rem; font-weight: bold; color: #fba92c; margin: 0 0 0.75rem 0; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Makanan Khas
+                </h4>
+                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin: 0;">
+                    Festival makanan khas daerah, bazar kuliner, demo memasak, dan kegiatan yang memperkenalkan warisan kuliner Nusantara.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-top: 10px solid #fba92c; display: flex; flex-direction: column; min-height: 160px;">
+                <h4 style="font-size: 1.2rem; font-weight: bold; color: #fba92c; margin: 0 0 0.75rem 0; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Edukasi & Workshop
+                </h4>
+                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin: 0;">
+                    Menampilkan berbagai pertunjukan budaya seperti tari tradisional, musik daerah, teater, wayang, dan seni pertunjukan lainnya.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-top: 10px solid #fba92c; display: flex; flex-direction: column; min-height: 160px;">
+                <h4 style="font-size: 1.2rem; font-weight: bold; color: #fba92c; margin: 0 0 0.75rem 0; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Kerajinan Budaya
+                </h4>
+                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin: 0;">
+                    Pameran batik, tenun, ukiran, anyaman, keramik, serta produk kreatif berbasis budaya lokal.
+                </p>
+            </div>
+            
+            <div style="background: #ffffff; border-radius: 12px; padding: 1.5rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-top: 10px solid #fba92c; display: flex; flex-direction: column; min-height: 160px;">
+                <h4 style="font-size: 1.2rem; font-weight: bold; color: #fba92c; margin: 0 0 0.75rem 0; text-transform: uppercase; letter-spacing: 0.05em;">
+                    Warisan Budaya
+                </h4>
+                <p style="font-size: 0.85rem; color: #4b5563; line-height: 1.6; margin: 0;">
+                    Menampilkan kegiatan yang berkaitan dengan pelestarian cagar budaya, situs bersejarah, museum, serta pengenalan warisan budaya benda maupun takbenda.
+                </p>
+            </div>
+
+        </div>
+    </section>
+	<script src="asset/bootstrap-5.2.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
